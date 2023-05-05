@@ -18,9 +18,11 @@ public class SecurityConfig {
 	    .authorizeHttpRequests()
 	    .requestMatchers(HttpMethod.GET, "/free")
 	    .permitAll()
+	    .requestMatchers(HttpMethod.POST, "/login")
+	    .permitAll()
 	    .anyRequest().authenticated().and().cors();
 
-	http.addFilterBefore(new Filter(), UsernamePasswordAuthenticationFilter.class);
+	http.addFilterBefore(new MyFilter(), UsernamePasswordAuthenticationFilter.class);
 	return http.build();
     }
 }

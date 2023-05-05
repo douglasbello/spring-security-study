@@ -14,8 +14,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@Configuration
-public class Filter extends OncePerRequestFilter {
+public class MyFilter extends OncePerRequestFilter {
 
 
     @Override
